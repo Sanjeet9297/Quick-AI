@@ -1,4 +1,4 @@
-import { useClerk, useUser } from "@clerk/clerk-react";
+import { Protect, useClerk, useUser } from "@clerk/clerk-react";
 import {
   Eraser,
   FileText,
@@ -6,6 +6,7 @@ import {
   House,
   Icon,
   Image,
+  LogOut,
   Scissors,
   SquarePen,
   Users,
@@ -71,6 +72,25 @@ const Siderbar = ({ sidebar, setSidebar }) => {
             </NavLink>
           ))}
         </div>
+      </div>
+      <div className="w-full border-t border-gray-200 p-4 px-7 flex items-center justify-between">
+        <div
+          onClick={openUserProfile}
+          className="flex gap-2 items-center cursor-pointer"
+        >
+          <img src={user.imageUrl} className="w-8 rounded-full " alt="" />
+          <div>
+            <h1 className="text-sm font-medium">{user.fullName}</h1>
+            <p className="text-xs text-gray-500">
+              <Protect plan="premium" fallback="Free">Premium </Protect>
+              Plan
+            </p>
+          </div>
+        </div>
+        <LogOut
+          onClick={signOut}
+          className="w-4.5 text-gray-400 hover:text-gray-700 transition cursor-pointer"
+        />
       </div>
     </div>
   );
