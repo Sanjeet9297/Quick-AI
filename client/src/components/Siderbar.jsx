@@ -15,14 +15,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { to: "ai", label: "Dashboard", Icon: House },
-  { to: "ai/write-article", label: "Write Article", Icon: SquarePen },
-  { to: "ai/blog-titles", label: "Blog Titles", Icon: Hash },
-  { to: "ai/generate-images", label: "Generate Images", Icon: Image },
-  { to: "ai/remove-background", label: "Remove Background", Icon: Eraser },
-  { to: "ai/remove-object", label: "Remove Object", Icon: Scissors },
-  { to: "ai/review-resume", label: "Review Resume", Icon: FileText },
-  { to: "ai/community", label: "Community", Icon: Users },
+  { to: "/ai", label: "Dashboard", Icon: House },
+  { to: "write-article", label: "Write Article", Icon: SquarePen },
+  { to: "blog-titles", label: "Blog Titles", Icon: Hash },
+  { to: "generate-images", label: "Generate Images", Icon: Image },
+  { to: "remove-background", label: "Remove Background", Icon: Eraser },
+  { to: "remove-object", label: "Remove Object", Icon: Scissors },
+  { to: "review-resume", label: "Review Resume", Icon: FileText },
+  { to: "community", label: "Community", Icon: Users },
 ];
 
 const Siderbar = ({ sidebar, setSidebar }) => {
@@ -82,7 +82,9 @@ const Siderbar = ({ sidebar, setSidebar }) => {
           <div>
             <h1 className="text-sm font-medium">{user.fullName}</h1>
             <p className="text-xs text-gray-500">
-              <Protect plan="premium" fallback="Free">Premium </Protect>
+              <Protect plan="premium" fallback="Free">
+                Premium{" "}
+              </Protect>
               Plan
             </p>
           </div>
