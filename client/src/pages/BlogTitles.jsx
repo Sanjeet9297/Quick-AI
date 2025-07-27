@@ -21,7 +21,7 @@ const BlogTitles = () => {
   };
   return (
     <div className="min-h-screen w-full bg-[#F5F9FF] p-6 flex flex-col md:flex-row gap-4 items-start text-slate-700 font-sans">
-      {/* Left Column - Article Configuration */}
+      {/* Left Column */}
       <form
         onSubmit={onSubmitHandler}
         className="w-full md:w-1/2 p-6 bg-white rounded-lg border border-gray-200 shadow-sm"
@@ -67,7 +67,7 @@ const BlogTitles = () => {
         </button>
       </form>
 
-      {/* Right Column - Generated Article */}
+      {/* Right Column*/}
       <div className="w-full md:w-1/2 p-6 bg-white rounded-lg border border-gray-200 shadow-sm min-h-[340px] flex flex-col">
         <div className="flex items-center gap-3 mb-4">
           <Hash className="w-5 h-5 text-[#8E37EB]" />
