@@ -1,3 +1,5 @@
+import { useAuth } from "@clerk/clerk-react";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
@@ -9,26 +11,41 @@ import RemoveBackground from "./pages/RemoveBackground";
 import RemoveObject from "./pages/RemoveObject";
 import ReviewResume from "./pages/ReviewResume";
 import Community from "./pages/Community";
+import { Toaster } from "react-hot-toast";
 
 function App() {
+  // const { isLoaded, isSignedIn, getToken } = useAuth();
+
+  // useEffect(() => {
+  //   const fetchToken = async () => {
+  //     if (isLoaded && isSignedIn) {
+  //       const token = await getToken();
+  //       console.log("Token:", token);
+  //     } else {
+  //       console.log("🔒 Clerk not ready or user not signed in");
+  //     }
+  //   };
+
+  //   fetchToken();
+  // }, [isLoaded, isSignedIn]);
+
   return (
-    <>
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ai" element={<Layout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="write-article" element={<WriteArticle />} />
-            <Route path="blog-titles" element={<BlogTitles />} />
-            <Route path="generate-images" element={<GenerateImages />} />
-            <Route path="remove-background" element={<RemoveBackground />} />
-            <Route path="remove-object" element={<RemoveObject />} />
-            <Route path="review-resume" element={<ReviewResume />} />
-            <Route path="community" element={<Community />} />
-          </Route>
-        </Routes>
-      </div>
-    </>
+    <div>
+      <Toaster />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ai" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="write-article" element={<WriteArticle />} />
+          <Route path="blog-titles" element={<BlogTitles />} />
+          <Route path="generate-images" element={<GenerateImages />} />
+          <Route path="remove-background" element={<RemoveBackground />} />
+          <Route path="remove-object" element={<RemoveObject />} />
+          <Route path="review-resume" element={<ReviewResume />} />
+          <Route path="community" element={<Community />} />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
