@@ -12,12 +12,14 @@ await connectCloudinary();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Your frontend URL
+    origin: [
+      "http://localhost:5173", 
+      "https://quick-ai-t7ov.vercel.app",
+    ],
     credentials: true,
   })
 );
 
-app.use(cors());
 app.use(express.json());
 app.use(clerkMiddleware());
 
@@ -35,5 +37,3 @@ app.use("/api/user", userRouter);
 app.listen(8080, () => {
   console.log("Server is running on port 8080");
 });
-
-// npm run server
